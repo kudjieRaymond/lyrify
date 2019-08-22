@@ -10,7 +10,7 @@
 		<main>
 			<div class="container">
 				<div class="row">
-					<Track v-for="track in tracks" v-bind:key="track.track_id"></Track>
+					<Track v-for="item in tracks" v-bind:key="item.track_id" v-bind="item.track"></Track>
 				</div>
 			</div>
 		</main>
@@ -32,7 +32,7 @@ export default {
 		}
 	},
 	created(){
-		api.chartTop({params:{page: 1 , page_size	: 12, country: 'us' , f_has_lyrics:1, apikey: 'f5ea45c1c8fb098deb912574e46f2c10'}})
+		api.chartTop({params:{page: 1 , page_size	: 12, country: 'gh' , f_has_lyrics:1, apikey: 'f5ea45c1c8fb098deb912574e46f2c10'}})
 			.then((res)=>{
 				console.log(res.data.message.body);
 				this.tracks = res.data.message.body.track_list;

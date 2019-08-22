@@ -3,9 +3,9 @@ import App from './App.vue'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
+import { faUserSecret , faUserAlt, faHeadphonesAlt, faExclamationCircle, faCompactDisc} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-library.add(faUserSecret)
+library.add(faUserSecret , faUserAlt, faHeadphonesAlt, faExclamationCircle, faCompactDisc)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
