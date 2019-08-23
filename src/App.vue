@@ -12,13 +12,11 @@
 </template>
 
 <script>
- import api from './api/client'
 export default {
   name: 'app',
   
 	data(){
 		return {
-			track:'',
 			tracks: []
 		}
 	}
