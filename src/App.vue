@@ -2,45 +2,25 @@
   <div id="app">
 		<nav class="navbar navbar-light bg-light">
 			<a class="navbar-brand">LYRIFY</a>
-			<form class="form-inline">
-				<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-			</form>
 		</nav>
 		<main>
 			<div class="container">
-				<div class="row">
-					<Track v-for="item in tracks" v-bind:key="item.track_id" v-bind="item.track"></Track>
-				</div>
+				<router-view ></router-view>
 			</div>
 		</main>
   </div>
 </template>
 
 <script>
-import Track from './components/track.vue'
-import api from './api/client'
- 
+ import api from './api/client'
 export default {
   name: 'app',
-  components: {
-		Track
-	},
+  
 	data(){
 		return {
+			track:'',
 			tracks: []
 		}
-	},
-	created(){
-		api.chartTop({params:{page: 1 , page_size	: 12, country: 'gh' , f_has_lyrics:1, apikey: 'f5ea45c1c8fb098deb912574e46f2c10'}})
-			.then((res)=>{
-				console.log(res.data.message.body);
-				this.tracks = res.data.message.body.track_list;
-			})
-			.catch(err=>console.log(err));
-	},
-	methods:{
-
 	}
 	
 }

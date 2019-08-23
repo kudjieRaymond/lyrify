@@ -10,9 +10,8 @@
 
 				<div class="d-flex justify-content-flex-end align-items-flex-end">
 					<div class="btn-group">
-						<button type="button" @click.prevent="showLyrics()" class="btn btn-block btn-outline-secondary">
-							View Lyrics
-							</button>
+						<router-link :to="{name: 'lyrics', params: {id: track_id}}" class="btn btn-block btn-outline-secondary">View Lyrics</router-link>
+						
 					</div>
 				</div>
 			</div>

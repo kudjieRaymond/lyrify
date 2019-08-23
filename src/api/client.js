@@ -8,8 +8,11 @@ export default{
 	chartTop(params){
 		return client.get('/chart.tracks.get', params);
 	},
-	getTrack(params){
+	find(params){
 		return client.get('/track.search', params);
+	},
+	getTrack(params){
+		return client.get('/track.get', params);
 	},
 	getLyric(params){
 		return client.get('/track.lyrics.get', params);
