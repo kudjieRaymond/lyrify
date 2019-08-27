@@ -31,7 +31,7 @@ import Track from './track.vue'
 import api from '../api/client'
  
  const getTracks = (url, callback) =>{
-	api.chartTop({params:{page: 1 , page_size	: 12, country: 'gh' , f_has_lyrics:1, apikey: 'f5ea45c1c8fb098deb912574e46f2c10'}})
+	api.chartTop({params:{page: 1 , page_size	: 12, country: 'gh' , f_has_lyrics:1, apikey: process.env.VUE_APP_MUSIX_MATCH_KEY}})
 			.then((res)=>{
 				this.tracks = callback(null, res.data.message.body.track_list);
 			})
@@ -63,7 +63,7 @@ export default {
 	methods:{
 		searchTrack(){
 			this.searching =true ;
-			api.find({params: {q_track:this.track ,page_size:10, page:1 ,s_track_rating:'desc', f_has_lyrics:1, apikey: 'f5ea45c1c8fb098deb912574e46f2c10'}})
+			api.find({params: {q_track:this.track ,page_size:10, page:1 ,s_track_rating:'desc', f_has_lyrics:1, apikey: process.env.VUE_APP_MUSIX_MATCH_KEY}})
 					.then((res)=>{
 						this.searching =false;
 						this.tracks = res.data.message.body.track_list;

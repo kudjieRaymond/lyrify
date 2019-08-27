@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="row">
-			<a @click="$router.go(-1)" class="btn btn-primary text-white" style="margin-bottom:20px; width:140px;"> Go Back</a>
+			<a @click="$router.go(-1)" class="btn btn-primary text-white mt-2 mb-2 " style="width:140px;"> Go Back</a>
 		</div>
 		<div class="row">
 			<div class="card">
@@ -49,10 +49,10 @@ export default {
 		}
 	},
 	created(){
-		api.getLyric({params: {track_id: this.$route.params.id, apikey:'f5ea45c1c8fb098deb912574e46f2c10'}})
+		api.getLyric({params: {track_id: this.$route.params.id, apikey:process.env.VUE_APP_MUSIX_MATCH_KEY}})
 		.then((res)=>{
 			this.lyrics = res.data.message.body.lyrics;
-			return api.getTrack({params: {track_id: this.$route.params.id, apikey:'f5ea45c1c8fb098deb912574e46f2c10'}})
+			return api.getTrack({params: {track_id: this.$route.params.id, apikey:process.env.VUE_APP_MUSIX_MATCH_KEY}})
 		})
 		.then((res)=>{
 			this.track = res.data.message.body.track;

@@ -1,9 +1,16 @@
 # lyrify
 
+This project fetches lyrics from Musixmatch and displays the result To the User 
+
 ## Project setup
 ```
 npm install
 ```
+### Get Your Api Key From https://developer.musixmatch.com/
+
+
+### Rename The env.example file to ".env" and Enter the api key you got from musixmatch
+
 
 ### Compiles and hot-reloads for development
 ```

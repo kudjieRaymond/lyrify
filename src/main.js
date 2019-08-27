@@ -15,6 +15,8 @@ Vue.filter('formatDate', function(value) {
     return moment(String(value)).format('MM/DD/YYYY hh:mm')
   }
 })
+require('dotenv').config()
+
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.use(VueRouter)
